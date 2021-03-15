@@ -50,10 +50,7 @@ public class Inventory : MonoBehaviour
     }
     void Start()
     {
-        GiveItem(0);
-        GiveItem(0);
-        RemoveItem(0);
-        RemoveItem(0);
+
     }
 
     void Update()
