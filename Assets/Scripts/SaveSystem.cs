@@ -25,16 +25,15 @@ public static class SaveSystem
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
-            formatter.Deserialize(stream);
+            PlayerData data = formatter.Deserialize(stream) as PlayerData;
             stream.Close();
 
-            PlayerData data = formatter.Deserialize(stream) as PlayerData;
 
             return data;
         }
         else
         {
-            Debug.LogError("Save file does not exist in " + path);
+            Debug.Log("Save file does not exist in " + path);
             return null;
         }
     }

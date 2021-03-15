@@ -9,18 +9,20 @@ public class Player : MonoBehaviour
     public void SavePlayer()
     {
         SaveSystem.SavePlayer(this);
+        Debug.Log("RAN SAVE");
     }
     public void LoadPlayer()
     {
         PlayerData data = SaveSystem.LoadPlayer();
         gold = data.gold;
+        Debug.Log("RAN LOAD");
     }
     void Start()
     {
         LoadPlayer();
     }
 
-    private void OnDestroy()
+    void OnDestroy()
     {
         SavePlayer();
     }
