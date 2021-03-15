@@ -23,6 +23,13 @@ public class ItemDatabase : MonoBehaviour
 
     void BuildDatabase()
     {
-        items = new List<Item>();
+        items = new List<Item>()
+        {
+            new Item(0, "Bait", "Bait to catch fish with", 1),
+            new Item(1, "Blue Fish", "A common blue fish", 1),
+            new Item(2, "Green Fish", "At least it's not a blue fish", 1),
+            new Item(3, "Orange Fish", "An orange fish? That's pretty pog", 1),
+            new Item(4, "Rainbow Fish", "LEGENDARY JUICER RAINBOW FISH PogU", 1)
+        };
     }
 }
