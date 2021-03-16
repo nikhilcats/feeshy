@@ -17,7 +17,6 @@ public class Inventory : MonoBehaviour
         {
             Debug.Log("Exists? : " + (x.item != null));
         }*/
-        Debug.Log("herpes");
     }
     public Item CheckForItem(int id)
     {
