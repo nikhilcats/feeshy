@@ -99,6 +99,7 @@ public class UIInventory : MonoBehaviour
     
     public void RemoveItem(Item item)
     {
+        Debug.Log("index of uilist: " + uiItems.FindIndex(i => i.item.id == item.id));
         UpdateSlot(uiItems.FindIndex(i => i.item.id == item.id), null);
         //OrganizeSlots();
     }

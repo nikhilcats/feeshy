@@ -63,6 +63,11 @@ public class Inventory : MonoBehaviour
                 //inventoryUI.OrganizeSlots();
                 Debug.Log("Item amount after removing NOT last object: " + CheckForItem(id).amount);
             }
+            else
+            {
+                invItems.Remove(item);
+                inventoryUI.RemoveItem(item);
+            }
         }    
     }
 }
