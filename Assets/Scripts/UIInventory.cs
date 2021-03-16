@@ -75,6 +75,10 @@ public class UIInventory : MonoBehaviour
 
     }*/
 
+    public void OnLoad(Item item)
+    {
+        UpdateSlot(uiItems.FindIndex(i => i.item == null), item);
+    }
     public void UpdateSlot(int slot, Item item)
     {
         uiItems[slot].UpdateItem(item);
