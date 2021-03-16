@@ -39,6 +39,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Backgrounds
+    uniqueID: 4237645105
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Pole
+    uniqueID: 4242739143
+    locked: 0
+  - name: Fish
+    uniqueID: 1757421817
     locked: 0

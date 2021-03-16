@@ -9,10 +9,11 @@ public class Fishing
     public Item greenFish;
     public Item blueFish;
     public Item rainbowFish;
+    public Inventory inventory;
 
-    public Item CastLine(ItemDatabase itemDatabase)
+    public Item CastLine(ItemDatabase itemDatabase, Inventory inventory)
     {
-        
+        this.inventory = inventory;
         ItemDatabase db = itemDatabase;
         System.Random random = new System.Random();
         Debug.Log("line has been cast");
@@ -42,6 +43,8 @@ public class Fishing
         Debug.Log(CatchableObjects[index]);
 
         Item objectCaught = CatchableObjects[index];
+
+        inventory.GiveItem(objectCaught.id);
 
         //depopulates list so that it doesn't overflow very important :)
         CatchableObjects.Clear();

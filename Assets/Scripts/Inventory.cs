@@ -2,11 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Inventory : MonoBehaviour
 {
     public List<Item> invItems = new List<Item>();
     public ItemDatabase itemDatabase;
+    public UIInventory inventoryUI;
 
+    private void Start()
+    {
+       
+        //GiveItem(1);
+        /*foreach (var x in inventoryUI.uiItems)
+        {
+            Debug.Log("Exists? : " + (x.item != null));
+        }*/
+    }
     public Item CheckForItem(int id)
     {
         return invItems.Find(item => item.id == id);
@@ -19,11 +30,13 @@ public class Inventory : MonoBehaviour
         if (item == null)
         {
             invItems.Add(itemToAdd);
+            inventoryUI.AddNewItem(itemToAdd);
             Debug.Log("Amount: " + CheckForItem(id).amount);
         }
         else
         {
             item.amount += 1;
+            inventoryUI.RefreshSlot(item);
             Debug.Log("Amount: " + CheckForItem(id).amount);
         }
     }
@@ -36,6 +49,8 @@ public class Inventory : MonoBehaviour
             if (item.amount == 1)
             {
                 invItems.Remove(item);
+                inventoryUI.RemoveItem(item);
+                // inventoryUI.OrganizeSlots();
                 if (CheckForItem(id) == null)
                 {
                     Debug.Log("success removing last object");
@@ -44,20 +59,10 @@ public class Inventory : MonoBehaviour
             else if (item.amount > 1)
             {
                 item.amount -= 1;
+                inventoryUI.RefreshSlot(item);
+                //inventoryUI.OrganizeSlots();
                 Debug.Log("Item amount after removing NOT last object: " + CheckForItem(id).amount);
             }
         }    
-    }
-    void Start()
-    {
-        GiveItem(0);
-        GiveItem(0);
-        RemoveItem(0);
-        RemoveItem(0);
-    }
-
-    void Update()
-    {
-        
     }
 }
