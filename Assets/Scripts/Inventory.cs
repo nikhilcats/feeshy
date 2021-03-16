@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour
         GiveItem(0);
         GiveItem(0);
         GiveItem(0);
-        RemoveItem(1);
+        GiveItem(4);
         //GiveItem(1);
         /*foreach (var x in inventoryUI.uiItems)
         {
