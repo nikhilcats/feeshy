@@ -384,10 +384,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiItems: []
+  uiTexts: []
   slotPrefab: {fileID: 6886579718827150764, guid: cd5cc0d0dd1e3724d92c840f3f1deb90,
     type: 3}
   slotPanel: {fileID: 1261749939}
   numberOfSlots: 8
+  txt: {fileID: 0}
 --- !u!114 &677543774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,7 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -620,7 +622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -352.71, y: -0.14303}
+  m_AnchoredPosition: {x: -352.71, y: -0.14303017}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1261749940
