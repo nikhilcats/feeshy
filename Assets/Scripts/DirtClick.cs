@@ -10,6 +10,7 @@ public class DirtClick : MonoBehaviour
     public GameObject orangePrefab;
     public GameObject rainbowPrefab;
     public RectTransform rectTransform;
+    public PlantAudio plantclip;
     Ray2D ray;
     RaycastHit2D hit;
     Camera cam2;
@@ -29,15 +30,19 @@ public class DirtClick : MonoBehaviour
             {
                 case 1:
                     GameObject.Instantiate(bluePrefab, hit.point, Quaternion.identity);
+                    plantclip.plantAudio();
                     break;
                 case 2:
                     GameObject.Instantiate(greenPrefab, hit.point, Quaternion.identity);
+                    plantclip.plantAudio();
                     break;
                 case 3:
                     GameObject.Instantiate(orangePrefab, hit.point, Quaternion.identity);
+                    plantclip.plantAudio();
                     break;
                 case 4:
                     GameObject.Instantiate(rainbowPrefab, hit.point, Quaternion.identity);
+                    plantclip.plantAudio();
                     break;
                 default:
                     Debug.Log("Didnt work");
