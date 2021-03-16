@@ -13,12 +13,11 @@ public class Player : MonoBehaviour
     {
         this.inventoryItemIds.Clear();
         this.inventoryItemAmounts.Clear();
-        int index = 0;
+
         foreach (Item item in inventory.invItems)
         {
-            inventoryItemIds.Add(inventory.invItems[index].id);
-            inventoryItemAmounts.Add(inventory.invItems[index].amount);
-            index++;
+            inventoryItemIds.Add(item.id);
+            inventoryItemAmounts.Add(item.amount);
         }
         SaveSystem.SavePlayer(this);
         Debug.Log("RAN SAVE");
@@ -33,12 +32,14 @@ public class Player : MonoBehaviour
         this.gold = data.gold;
         this.inventoryItemIds = data.inventoryItemIds;
         this.inventoryItemAmounts = data.inventoryItemAmounts;
+  
         inventory.invItems.Clear();
-        foreach(int i in inventoryItemIds)
+
+        for (int i = 0; i < inventoryItemIds.Count; i++)
         {
-            for(int z = 0; z < inventoryItemAmounts[i]; z++)
+            for (int z = 0; z < inventoryItemAmounts[i]; z++)
             {
-                inventory.GiveItem(i);
+                inventory.GiveItem(inventoryItemIds[i]);
             }
             
         }
