@@ -44,11 +44,7 @@ public class Fishing
 
         Item objectCaught = CatchableObjects[index];
 
-        inventory.GiveItem(1);
-        inventory.GiveItem(0);
-        inventory.GiveItem(0);
-        inventory.GiveItem(0);
-        inventory.GiveItem(3);
+        inventory.GiveItem(objectCaught.id);
 
         //depopulates list so that it doesn't overflow very important :)
         CatchableObjects.Clear();

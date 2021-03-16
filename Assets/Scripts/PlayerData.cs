@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData
 {
-    public int gold;
+    public int gold = 0;
     public List<int> inventoryItemIds;
     public List<int> inventoryItemAmounts;
 
