@@ -11,8 +11,7 @@ public class UIInventory : MonoBehaviour
     public Transform slotPanel;
     public int numberOfSlots = 8;
     public TMP_Text txt;
-    private List<UIItem> refItems;
-    private List<UIItemText> refTexts;
+
 
     private void Awake()
     {
@@ -24,18 +23,7 @@ public class UIInventory : MonoBehaviour
             uiItems.Add(instance.GetComponentInChildren<UIItem>());
 
             uiTexts.Add(instance.GetComponentInChildren<UIItemText>());
-            // Debug.Log("IM AWAKE :D");
-        }
 
-         this.refItems = this.uiItems;
-         this.refTexts = this.uiTexts;
-        foreach (var x in refItems)
-        {
-            Debug.Log("Existsv1? : " + (x.item != null));
-            if (x.item != null)
-            {
-                Debug.Log("item amount: " + x.item.amount);
-            }
         }
     }
 
@@ -44,7 +32,7 @@ public class UIInventory : MonoBehaviour
         
     }
 
-    public void OrganizeSlots()
+   /* public void OrganizeSlots()
     {
         List<UIItem> uiItemsTemp = new List<UIItem>();
         List<UIItemText> uiTextsTemp = new List<UIItemText>();
@@ -59,7 +47,7 @@ public class UIInventory : MonoBehaviour
 
         int toAdd = uiItemsTemp.Count;
         Debug.Log("toAdd: " + toAdd);
-        List<UIItem> refItemsTemp = this.refItems;
+        List<UIItem> refItemsTemp = new 
         List<UIItemText> refTextsTemp = this.refTexts;
         foreach (var x in refItemsTemp)
         {
@@ -85,7 +73,8 @@ public class UIInventory : MonoBehaviour
         this.uiItems = refItemsTemp;
         this.uiTexts = refTextsTemp;
 
-    }
+    }*/
+
     public void UpdateSlot(int slot, Item item)
     {
         uiItems[slot].UpdateItem(item);
@@ -107,7 +96,6 @@ public class UIInventory : MonoBehaviour
     public void RemoveItem(Item item)
     {
         UpdateSlot(uiItems.FindIndex(i => i.item.id == item.id), null);
-        OrganizeSlots();
-
+        //OrganizeSlots();
     }
 }
