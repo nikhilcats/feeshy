@@ -7,6 +7,7 @@ public class FishingAction : MonoBehaviour
     Fishing fishing = new Fishing();
     public ItemDatabase itemDatabase;
     public Inventory inventory;
+    public PlayFishAudio fishAudio;
     public SpriteRenderer spriterenderer;
     public Sprite NormalPole;
     public Sprite CastedPole;
@@ -24,7 +25,9 @@ public class FishingAction : MonoBehaviour
         {
             isRunning = true;
             spriterenderer.sprite = CastedPole;
+            fishAudio.playFishLine();
             yield return new WaitForSecondsRealtime(rnd.Next(3,8));
+            fishAudio.playCaught();
             Item fishCaught = fishing.CastLine(itemDatabase, inventory);
             switch (fishCaught.id)
             {
