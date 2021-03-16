@@ -9,14 +9,16 @@ public class Item
     public string description;
     public Sprite icon;
     public int amount;
+    public int price;
     
-    public Item(int id, string name, string description, int amount)
+    public Item(int id, string name, string description, int amount, int price)
     {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.icon = Resources.Load<Sprite>("Sprites/Items" + name);
+        this.icon = Resources.Load<Sprite>(name);
         this.amount = amount;
+        this.price = price;
     }
 
     public Item(Item item)
@@ -24,7 +26,8 @@ public class Item
         this.id = item.id;
         this.name = item.name;
         this.description = item.description;
-        this.icon = Resources.Load<Sprite>("Sprites/Items" + item.name);
+        this.icon = Resources.Load<Sprite>(item.name);
         this.amount = item.amount;
+        this.price = item.price;
     }
 }

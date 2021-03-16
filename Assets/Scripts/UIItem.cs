@@ -24,6 +24,7 @@ public class UIItem : MonoBehaviour
         else
         {
             spriteImage.color = Color.clear;
+            spriteImage.sprite = null;
         }
     }
 }
