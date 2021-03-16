@@ -29,22 +29,22 @@ public class FishingAction : MonoBehaviour
             switch (fishCaught.id)
             {
                 case 1:
-                    BlueFish.sortingLayerName = "Default";
+                    BlueFish.sortingLayerName = "Fish";
                     yield return new WaitForSecondsRealtime(1.5f);
                     BlueFish.sortingLayerName = "Backgrounds";
                     break;
                 case 2:
-                    GreenFish.sortingLayerName = "Default";
+                    GreenFish.sortingLayerName = "Fish";
                     yield return new WaitForSecondsRealtime(1.5f);
                     GreenFish.sortingLayerName = "Backgrounds";
                     break;
                 case 3:
-                    OrangeFish.sortingLayerName = "Default";
+                    OrangeFish.sortingLayerName = "Fish";
                     yield return new WaitForSecondsRealtime(1.5f);
                     OrangeFish.sortingLayerName = "Backgrounds";
                     break;
                 case 4:
-                    RainbowFish.sortingLayerName = "Default";
+                    RainbowFish.sortingLayerName = "Fish";
                     yield return new WaitForSecondsRealtime(1.5f);
                     RainbowFish.sortingLayerName = "Backgrounds";
                     break;
